@@ -1,0 +1,16 @@
+#
+# Gradle's downloaded files
+.gradle/
+
+#
+# IntelliJ files
+.idea/
+
+#
+# build artifacts
+build/
+
+#
+# MacOS directory formatting files
+.DS_Store
+

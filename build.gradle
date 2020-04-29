@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'pmd'           // Add the PMD plugin.
+}
+
+group 'dev.build23'
+version '1.0.0'
+
+sourceCompatibility = 1.11
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'pmd-gradle-example',
+                'Main-Class': 'dev.build23.examples.pmdgradle.PmdGradleApplication'
+    }
+    from {
+        configurations.compileClasspath.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    testImplementation "junit:junit:4.12"              // JUnit.
+}
+
+// Configure PMD.
+pmd {
+    toolVersion = "6.23.0"                             // The version of PMD to use.
+    ruleSetFiles = files("config/pmd/pmd.xml")         // The location of the configuration file.
+    ruleSets = []                                      // Ignore the default rules. The ones this config
+                                                       // uses are set with the ruleSetFiles property.
+}

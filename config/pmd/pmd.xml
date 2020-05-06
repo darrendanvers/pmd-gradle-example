@@ -16,12 +16,6 @@
         <!-- Requiring a constructor clutters up the code and doesn't add a lot of value. -->
         <exclude name="AtLeastOneConstructor" />
     </rule>
-    <rule ref="category/java/codestyle.xml/LongVariable">
-        <properties>
-            <!-- I love long names. -->
-            <property name="minimum" value="30" />
-        </properties>
-    </rule>
     <rule ref="category/java/codestyle.xml/ClassNamingConventions">
         <properties>
             <!-- I don't like forcing certain classes to be name Factory or Util. The pattern is useful -->

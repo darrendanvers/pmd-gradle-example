@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
+<!-- My preferred PMD configuration. -->
 <ruleset name="Custom ruleset"
          xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
     <description>
-        DD PMD configuration.
+        PMD configuration.
     </description>
 
     <rule ref="category/java/bestpractices.xml" />
@@ -31,31 +32,31 @@
     </rule>
     <rule ref="category/java/codestyle.xml/LinguisticNaming" >
         <properties>
-            <!-- DD I prefer the builder pattern for setters. This rule requires you to return void. -->
+            <!-- I prefer the builder pattern for setters. This rule requires you to return void. -->
             <property name="checkSetters" value="false" />
-            <!-- DD The way I like to name tests breaks this rule, so ignore anything annotated as @Test. -->
+            <!--The way I like to name tests breaks this rule, so ignore anything annotated as @Test. -->
             <property name="violationSuppressXPath" value="//ClassOrInterfaceBodyDeclaration/Annotation/MarkerAnnotation//Name[@Image='Test']" />
         </properties>
     </rule>
     <rule ref="category/java/codestyle.xml/FieldNamingConventions" >
         <properties>
-            <!-- DD I like to name my logger fields "logger" and not be all capitalized. -->
+            <!-- I like to name my logger fields "logger" and not be all capitalized. -->
             <property name="exclusions" value="serialVersionUID|logger" />
         </properties>
     </rule>
     <rule ref="category/java/codestyle.xml/MethodNamingConventions" >
         <properties>
-            <!-- DD I like have underscores in my test names. This allows for that. -->
+            <!-- I like have underscores in my test names. This allows for that. -->
             <property name="junit4TestPattern" value="[a-z][a-zA-Z0-9_]*" />
         </properties>
     </rule>
 
 
     <rule ref="category/java/design.xml">
-        <!-- DD As much as I theoretically like the Law of Demeter, the test for it hasn't kept up -->
+        <!-- As much as I theoretically like the Law of Demeter, the test for it hasn't kept up -->
         <!-- with how a lot of coding is done. It can't handle stream processing. -->
         <exclude name="LawOfDemeter" />
-        <!-- DD This rule has to be configured explicitly. There are no defaults. Since there is nothing -->
+        <!-- This rule has to be configured explicitly. There are no defaults. Since there is nothing -->
         <!-- I want to put in here, I excluded it to remove a warning during build. See -->
         <!-- https://pmd.github.io/latest/pmd_rules_java_design.html#loosepackagecoupling for how to configure -->
         <!-- this rule if you want to use 0it. -->
@@ -87,17 +88,15 @@
     <rule ref="rulesets/java/quickstart.xml"/>
 
     <rule ref="category/java/errorprone.xml">
-        <!-- DD This rule is poorly implemented and should exclude things that do not -->
+        <!-- This rule is poorly implemented and should exclude things that do not -->
         <!-- are not beans. As it adds too much noise, I'm excluding it. -->
         <exclude name="BeanMembersShouldSerialize"/>
     </rule>
     <rule ref="category/java/errorprone.xml/DataflowAnomalyAnalysis">
         <properties>
-            <!-- DD There is a bug in PMD and it will trigger this rule in for (x : any-sort-of-collection) {} loops. -->
+            <!-- There is a bug in PMD and it will trigger this rule in for (x : any-sort-of-collection) {} loops. -->
             <!-- Turning off as the compiler would flag these anyway. -->
             <property name="violationSuppressRegex" value="^Found 'UR'-anomaly.*"/>
         </properties>
     </rule>
-
-
 </ruleset>

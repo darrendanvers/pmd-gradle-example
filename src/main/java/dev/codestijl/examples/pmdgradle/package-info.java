@@ -5,4 +5,4 @@
  * @author darrendanvers
  * @since 1.0.0
  */
-package dev.build23.examples.pmdgradle;
+package dev.codestijl.examples.pmdgradle;

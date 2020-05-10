@@ -1,6 +1,6 @@
 package dev.build23.example.pmdgradle;
 
-import dev.build23.examples.pmdgradle.PmdGradleApplication;
+import dev.codestijl.examples.pmdgradle.PmdGradleApplication;
 import org.junit.Assert;
 import org.junit.Test;
 

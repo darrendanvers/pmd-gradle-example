@@ -1,4 +1,4 @@
-package dev.build23.examples.pmdgradle;
+package dev.codestijl.examples.pmdgradle;
 
 /**
  * The driver application for this example.

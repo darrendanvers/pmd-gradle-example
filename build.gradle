@@ -3,7 +3,7 @@ plugins {
     id 'pmd'           // Add the PMD plugin.
 }
 
-group 'dev.build23'
+group 'dev.codestijl'
 version '1.0.0'
 
 sourceCompatibility = 1.11
@@ -11,7 +11,7 @@ sourceCompatibility = 1.11
 jar {
     manifest {
         attributes 'Implementation-Title': 'pmd-gradle-example',
-                'Main-Class': 'dev.build23.examples.pmdgradle.PmdGradleApplication'
+                'Main-Class': 'dev.codestijl.examples.pmdgradle.PmdGradleApplication'
     }
     from {
         configurations.compileClasspath.collect {

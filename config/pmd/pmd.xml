@@ -85,8 +85,6 @@
 
     <rule ref="category/java/security.xml"/>
 
-    <rule ref="rulesets/java/quickstart.xml"/>
-
     <rule ref="category/java/errorprone.xml">
         <!-- This rule is poorly implemented and should exclude things that do not -->
         <!-- are not beans. As it adds too much noise, I'm excluding it. -->
